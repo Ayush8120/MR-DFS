@@ -44,4 +44,12 @@ Run the testing script and enter the number of robots and the number of robots p
 
 Note : MATLAB Implementation is for only one case , with the following constrants:
 
->    - Number of robots = Number of Leaf Nodes  <img title="" src="https://lh4.googleusercontent.com/NbC7_dgf-JYXHwEj6-fSv7HI0IUtikwHSwkhjqhVZi_tB7cax2JyrX66AWdmOx1fj-EzSSDkPIFgrRkBb6vX2xmF0McxO1phlTKeJZQM2FVzYb7XPtd00REUeZytWTYyG7qF-VjB" alt="" width="299" data-align="center">   - Present Implementation done for 9 robots, 3 robot/cluster
+>    - Number of robots = Number of Leaf Nodes  
+> 
+> ------------------------
+> 
+> <img title="" src="https://lh4.googleusercontent.com/NbC7_dgf-JYXHwEj6-fSv7HI0IUtikwHSwkhjqhVZi_tB7cax2JyrX66AWdmOx1fj-EzSSDkPIFgrRkBb6vX2xmF0McxO1phlTKeJZQM2FVzYb7XPtd00REUeZytWTYyG7qF-VjB" alt="" width="299" data-align="center">
+> 
+> ----------------
+> 
+>  - Present Implementation done for 9 robots, 3 robot/cluster
