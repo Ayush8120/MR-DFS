@@ -1,14 +1,20 @@
 clc
 close all
 
-s = [1 1 1 2 2 2 3 3 3 4 4 4];
-t = [2 3 4 5 6 7 8 9 10 11 12 13];
-weights = [1 1 1 1 1 1 1 1 1 1 1 1];
-names = {'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M'};
+%s = [1 1 1 2 2 2 3 3 3 4 4 4];
+%t = [2 3 4 5 6 7 8 9 10 11 12 13];
+%weights = [1 1 1 1 1 1 1 1 1 1 1 1];
+%names = {'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M'};
+
+s = [1,2,3,4,5,5,6,7,8,8,11,11,12,12,15,16,16,17,19,19,21,22,22];
+t =  [3,3,4,5,6,11,7,8,9,10,12,15,13,14,16,17,19,18,20,21,22,23,24];
+weights = [10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10];
+names = {'A' 'B' 'C' 'D' 'E' 'F' 'G' 'H' 'I' 'J' 'K' 'L' 'M' 'N' 'O' 'P' 'Q' 'R' 'S' 'T' 'U' 'V' 'W' 'X'}
 %ab ac ad be bf bg ch ci cj dk dl dm
 %as we did flip edges therefore ; end node is the start node now
 
-labels = {'BA','CA','DA','EB','FB','GB','HC','IC','JC','KD','LD','MD'};
+%labels = {'BA','CA','DA','EB','FB','GB','HC','IC','JC','KD','LD','MD'};
+labels = ["AC","BC","CD","DE","EF","EK","FG","GH","HI","HJ","KL","KO","LM","LN","OP","PQ","PS","QR","ST","SU","UV","VW","VX"]; 
 G = digraph(s,t,weights,names);
 G = flipedge(G);
 G.Edges.Label = labels';
