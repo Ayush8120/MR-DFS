@@ -42,7 +42,8 @@ Run the testing script and enter the number of robots and the number of robots p
 Note : MATLAB Implementation is for only one case , with the following constrants:
 
 ----------
- - Number of robots = Number of Leaf Nodes  
+ - Number of robots 
+ - Number of Leaf Nodes  
  - Present Implementation done for 9 robots, 3 robot/cluster
  - A more general implementation is available [Here](https://github.com/Ayush8120/MR-DFS/tree/main/ROS%2BGazebo%20Implementation/Python%20Implementation_General)
 ----------
