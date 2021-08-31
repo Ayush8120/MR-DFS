@@ -17,33 +17,27 @@ https://user-images.githubusercontent.com/72944387/131514355-1d2561b6-0834-4afe-
 
 --------------------
 
-#### <u><mark>[MATLAB Implemetation] </mark>(Add Link)                                                          </u>
+#### <u><mark>[MATLAB Implemetation_ver0] </mark>[Link](https://github.com/Ayush8120/MR-DFS/tree/main/MATLAB%20Implementation_ver0)</u>
+-----------------------------------
+- Contains code for general topology Algorithm execution
+-----------------------------------
 
-> Images-Videos
-> 
->     - Video of Exploration
-> 
->     -Image of the graph chosen
-> 
-> scripts
-> 
->     -first_step_on_vertex_visit.m(add link)
-> 
->     -get_incidence_matrix.m(add link)
-> 
->     -initialize_graph.m(add link)
-> 
->     -merge_matrices.m(add link)
-> 
->     -order_matrix.m(add link)
-> 
->     -second_step_on_vertex_visit.m(add link)
-> 
->     -testingscript.m(add link)
+#### <u><mark>[MATLAB Implemetation_9_3] </mark>[Link](https://github.com/Ayush8120/MR-DFS/tree/main/MATLAB%20Implementation_9_3)</u>
+-----------------------------------
+- Contains a particular topology execution; whose video is pinned in README.md
+-----------------------------------
 
-Run the testing script and enter the number of robots and the number of robots per cluster.
+#### <u><mark>[Python Implementation] </mark>[Link](https://github.com/Ayush8120/MR-DFS/tree/main/ROS%2BGazebo%20Implementation)</u>
+-----------------------------------
+- Contains general algorithm execution for any random topology in Python
+-----------------------------------
 
-[link to video in the MATLAB Implementation file ]()
+#### <u><mark>[Improved-MR-DFS.pdf] </mark>[Link](https://github.com/Ayush8120/MR-DFS/blob/main/Improved-MR-DFS.pdf)</u>
+-----------------------------------
+- The implemented paper's pdf version.
+-----------------------------------
+
+Run the testing script and enter the number of robots and the number of robots per cluster : Enter 9 and 3
 
 Note : MATLAB Implementation is for only one case , with the following constrants:
 
