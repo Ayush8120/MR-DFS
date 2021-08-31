@@ -2,13 +2,16 @@
 
 Improved Multi-Robot Depth First Search Algorithm.
 
-Implementation of [This Paper]()
+Implementation of [This Paper](https://link.springer.com/article/10.1007/s10846-015-0309-9)
 
 ### <mark>Abstract:</mark>
 
 -----------
 
 In the task of terrain exploration using multiple robots the present challenges are collission avoidance and declaration of completion. This paper introduces a novel decentralized method for tree/graph exploration with collission avoidance using minimum sensory data and declaration of compeltion of exploration. The paper proposes the use of modified incidence matrix as a data structure for information exchange between robots and the vertex. A robot will drop beacons at every vertex that it travels , to update the incidence matrices and thus convey the message of its edge choices to any subsequent robot that come to that node.
+
+https://user-images.githubusercontent.com/72944387/131514355-1d2561b6-0834-4afe-a7a0-c12d0d0e5d99.mp4
+
 
 ### <mark>Structure Of This Repository</mark>
 
