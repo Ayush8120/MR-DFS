@@ -42,7 +42,7 @@ Run the testing script and enter the number of robots and the number of robots p
 Note : MATLAB Implementation is for only one case , with the following constrants:
 
  - Number of robots : 9 
- - Number of Leaf Nodes : 3  
+ -Number of Leaf Nodes : 3  
 
 -----------
  - Present Implementation done for 9 robots, 3 robot/cluster
