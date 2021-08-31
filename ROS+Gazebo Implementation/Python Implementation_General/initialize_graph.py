@@ -29,6 +29,7 @@ class Robot:
         self.Q = []
         self.iteration = 0
         self.next_edge_decided = ''
+        self.path = []
         self.row_tags = []
         self.edge_tags = []
         self.spawn = leaf[robo_number]#same as robot name
