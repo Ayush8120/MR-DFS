@@ -27,7 +27,7 @@ https://user-images.githubusercontent.com/72944387/131514355-1d2561b6-0834-4afe-
 - Contains a particular topology execution; whose video is pinned in README.md
 -----------------------------------
 
-#### <u><mark>[Python Implementation] </mark>[Link](https://github.com/Ayush8120/MR-DFS/tree/main/ROS%2BGazebo%20Implementation)</u>
+#### <u><mark>[Python Implementation] </mark>[Link](https://github.com/Ayush8120/MR-DFS/tree/main/Python%20Implementation)</u>
 -----------------------------------
 - Contains general algorithm execution for any random topology in Python
 -----------------------------------
@@ -46,5 +46,5 @@ Note : MATLAB Implementation is for only one case , with the following constrant
 
 ----------
  - Present Implementation done for 9 robots, 3 robot/cluster
- - A more general implementation is available [Here](https://github.com/Ayush8120/MR-DFS/tree/main/ROS%2BGazebo%20Implementation/Python%20Implementation_General)
+ - A more general implementation is available [Here](https://github.com/Ayush8120/MR-DFS/tree/main/Python%20Implementation/Python%20Implementation_General)
 ----------
