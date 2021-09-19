@@ -11,63 +11,48 @@ from first_step_on_vertex_visit import Id,what_to_do_if_next_node_known,first_st
 from get_incidence_matrix import get_incidence_matrix
 import pprint
 pp = pprint.PrettyPrinter(indent=8)
+'''
+A standalone implementation of the algorithm on big graph
+10 Leaf Nodes
+24 Nodes  
+'''
+#Topography
+count = 0 #local flag to declare overall completion 
+K = 10 #Number of Leaf nodes = Number of Robots
+J = 24 # Number of nodes
 
-#print(pd.__version__)
-#Topography 
-# K = 4
-# J = 8
-count = 0
-K = 10
-J = 24
-# edges = ["AB","BC","CD","CE","AF","AH","GH"] # change this when implementing for a different topo
-# vertex = ["A","B","C","D","E","F","G","H"] # change this when implementing for a different topo
-# robo_vertex = ["D","E","F","G"]
-# XData = [2.5000, 1.5000, 1.5000, 1, 2, 2.5000, 3.5000, 3.5000]
-# YData = [4, 3, 2, 1, 1, 3, 2, 3]
-
-vertex = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X"]
-edges = ["AC","BC","CD","DE","EF","EK","FG","GH","HI","HJ","KL","KO","LM","LN","OP","PQ","PS","QR","ST","SU","UV","VW","VX"]
-robo_vertex = ["A","B","I","J","M","N","R","T","W","X"]
-XData = [2.50, 3.50,3,3,3,1.50,1.50,1.50,1,2,3.50,3,2.50,3.50,4.50,4.50,3.50,3.50,5,4.50,5.50,5.50,5,6]
-YData = [1,1,2,3,4,5,6,7,8,8,5,6,7,7,6,7,8,9,8,9,9,10,11,11]
-
+vertex = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X"]# Vertex Node name list
+edges = ["AC","BC","CD","DE","EF","EK","FG","GH","HI","HJ","KL","KO","LM","LN","OP","PQ","PS","QR","ST","SU","UV","VW","VX"]  # Edge name list
+robo_vertex = ["A","B","I","J","M","N","R","T","W","X"] # Spawn Locations of robots
+XData = [2.50, 3.50,3,3,3,1.50,1.50,1.50,1,2,3.50,3,2.50,3.50,4.50,4.50,3.50,3.50,5,4.50,5.50,5.50,5,6] #Robot Spawn X cordinates 
+YData = [1,1,2,3,4,5,6,7,8,8,5,6,7,7,6,7,8,9,8,9,9,10,11,11]  #Robot Spwn Y cordinates
 [graph,edges_decomp] = build_graph(edges)
 
+'''
+Graph making for visualization
+'''
 G = nx.Graph()
 
 for i in range(J):
     G.add_node(chr(i+65))
-    #print('LAMBA')
 
 for ed in edges_decomp:
     print(*ed)
     G.add_edge(*ed)
 nx.draw(G,with_labels = True, font_weight = 'bold')
-#plt.subplot(111)
 plt.show
-print(G.nodes)
-print(G.edges)
+# print(G.nodes)
+# print(G.edges)
 
-#---------------------------------------------------------------------------
+'''
+Incidence Matrix Making
+'''
 incidence_matrix = get_incidence_matrix(XData,YData,G)
 pp.pprint(incidence_matrix)
-#J = input("Enter the number of nodes: ")
-#K = input("Enter the number of robots: ")
-#K = int(K)
-#J = int(J)
-#----------------------------------------------------------------------------
-#leaf = np.zeros((1,int(K),numpy.s))
-#leaf = []s
-#for i in range(int(K)):
-#    leaf.append(input("Node Name of {i} th robot"))
-#print(leaf) #list of node names where robots are placed
 
-#---------------------------------------------------------------------------
-#incidence_matrix = np.zeros((J,J))
-#get the cordinates and map them to vertex alphabet
-#build the matrix accordingly
-#incidence_matrix = np.ones((J,J))
-
+'''
+Initializations
+'''
 #initializing of R : list of Robot objects
 R = []
 for j in range(K):
@@ -78,56 +63,35 @@ V = []
 for j in range(J):
     V.append(Vertex(vertex[j],edges,incidence_matrix))#asdf
 
-#print(R[2].__dict__) # prints all attributes
-#print(V[2].__dict__) # prints all attributes
-
-#--------------------------------------------------------------------------
-# graph = build_graph(edges)
-# edge_path = []
-# node_path = find_shortest_path(graph,'A','D')
-
-# for i in range(len(node_path) -1):
-#     edge_path.append(node_path[i] + node_path[i+1])
-# print(edge_path)
-
-#--------------------------------------------------------------------------
-
-#As the robots are placed on leaf nodes thus the vertex will have only one neighbour at that vertex
-#All the rbos are given an initial puch to there immediate neighbors
+'''
+CORE ALGORITHM :
+Each robot explores until its personal count flag turns ON. And the loop runs till the overall count flag turns ON.
+'''
+'''
+As the robots are placed on leaf nodes thus the vertex will have only one neighbour at that vertex
+Thus all the robots are given an initial puch to there immediate neighbors
+'''
 print("The first mandatory push:")
 print('')
 for k in range(K):
-    #print(R[k].present_location)
+    
     start = R[k].present_location
-    #print(V[ord(R[k].present_location) - 65].neighbors[0])
     end = V[ord(R[k].present_location) - 65].neighbors[0]
-    #print(-1*incidence_matrix[ord(start) - 65,ord(end)-65])
     top = np.array([-1*incidence_matrix[ord(start) - 65,ord(end)-65]])
     bottom = np.array([-1*incidence_matrix[ord(end) - 65,ord(start)-65]])
-    col_vector = np.vstack((top,bottom))
-    #print(col_vector)
-    #print(np.shape(col_vector))
-    #print(bottom)    
+    col_vector = np.vstack((top,bottom))    
     
     R[k].path.append('Base Station') # hovering over the launchpad
     R[k].path.append(R[k].present_location) # leaf node name designated
-    R[k].path.append(V[ord(R[k].present_location) - 65].neighbors[0])
-    #print(np.vstack((top,bottom))) 
+    R[k].path.append(V[ord(R[k].present_location) - 65].neighbors[0]) 
     print("The {e} robot is currently at {f}".format(e=k,f=R[k].present_location))
     print("The next node chosen is {}".format(V[ord(R[k].present_location) - 65].neighbors[0]))
     
     id,R,V = what_to_do_if_next_node_known(R,k,V,1,R[k].present_location,V[ord(R[k].present_location) - 65].neighbors[0],incidence_matrix=incidence_matrix)
-    #setpoint k robot ko 
-    
-    #print(V[ord(R[k].present_location) - 65].__dict__)
-    #print(R[k].__dict__)
     R[k].next_edge_decided,count = second_step_on_vertex_visit(graph, V,R,k,count)
     print('The next edge selected by - ' + str(k) + '- robot is' + str(R[k].next_edge_decided))
     print('')
-    #next edge jane bhi lag jatahai - idhar bhi setpoint dena hai
-    #publish the setpoint of the node to this drone command
-    #id,R,V = what_to_do_if_next_node_known(R,k,V,2,R[k].present_location, R[k].next_edge_decided.replace(R[k].present_location,''),incidence_matrix = incidence_matrix)
-    #print(R[k].present_location)
+   
 print("This is the loop part which continues till the declaration of completion")
 while(count != K):
      for z in range(K):
@@ -140,7 +104,10 @@ while(count != K):
                if R[z].next_edge_decided != 0:
                     print('The next edge selected by : ' + str(z) + ' : robot is :' + str(R[z].next_edge_decided))
                     print('')
-
+'''
+To get an overall view of the setpoints decided for each robot
+'''
 for k in range(K):
     R[k].path.append('Base Station')
-    print(R[k].path)
+    print("Setpoint list of : " +str(k) + " robot is : " )
+    print((R[k].path))
