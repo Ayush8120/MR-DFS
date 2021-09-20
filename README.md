@@ -18,24 +18,20 @@ https://user-images.githubusercontent.com/72944387/131514355-1d2561b6-0834-4afe-
 --------------------
 
 #### <u><mark>[MATLAB Implemetation_ver0] </mark>[Link](https://github.com/Ayush8120/MR-DFS/tree/main/MATLAB%20Implementation_ver0)</u>
------------------------------------
 - Contains code for general topology Algorithm execution
------------------------------------
+
 
 #### <u><mark>[MATLAB Implemetation_9_3] </mark>[Link](https://github.com/Ayush8120/MR-DFS/tree/main/MATLAB%20Implementation_9_3)</u>
------------------------------------
 - Contains a particular topology execution; whose video is pinned in README.md
------------------------------------
+
 
 #### <u><mark>[Python Implementation] </mark>[Link](https://github.com/Ayush8120/MR-DFS/tree/main/Python%20Implementation)</u>
------------------------------------
 - Contains general algorithm execution for any random topology in Python
------------------------------------
+
 
 #### <u><mark>[Improved-MR-DFS.pdf] </mark>[Link](https://github.com/Ayush8120/MR-DFS/blob/main/Improved-MR-DFS.pdf)</u>
------------------------------------
 - The implemented paper's pdf version.
------------------------------------
+------------
 
 Run the testing script and enter the number of robots and the number of robots per cluster : Enter 9 and 3
 
